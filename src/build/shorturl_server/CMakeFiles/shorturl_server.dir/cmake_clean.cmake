@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "../bin/shorturl_server"
+  "../bin/shorturl_server.pdb"
+  "CMakeFiles/shorturl_server.dir/base/config_file_reader.cc.o"
+  "CMakeFiles/shorturl_server.dir/base/config_file_reader.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/base/util.cc.o"
+  "CMakeFiles/shorturl_server.dir/base/util.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/main.cc.o"
+  "CMakeFiles/shorturl_server.dir/main.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/mysql/db_pool.cc.o"
+  "CMakeFiles/shorturl_server.dir/mysql/db_pool.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/async.c.o"
+  "CMakeFiles/shorturl_server.dir/redis/async.c.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/cache_pool.cc.o"
+  "CMakeFiles/shorturl_server.dir/redis/cache_pool.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/dict.c.o"
+  "CMakeFiles/shorturl_server.dir/redis/dict.c.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/hiredis.c.o"
+  "CMakeFiles/shorturl_server.dir/redis/hiredis.c.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/net.c.o"
+  "CMakeFiles/shorturl_server.dir/redis/net.c.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/read.c.o"
+  "CMakeFiles/shorturl_server.dir/redis/read.c.o.d"
+  "CMakeFiles/shorturl_server.dir/redis/sds.c.o"
+  "CMakeFiles/shorturl_server.dir/redis/sds.c.o.d"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/short_rpc_method.cc.o"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/short_rpc_method.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shortulr_rpc_server.cc.o"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shortulr_rpc_server.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shorturl_rpc.pb.cc.o"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shorturl_rpc.pb.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shorturl_rpc_client.cc.o"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shorturl_rpc_client.cc.o.d"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shorturl_web_service.cc.o"
+  "CMakeFiles/shorturl_server.dir/shorturl_src/shorturl_web_service.cc.o.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C CXX)
+  include(CMakeFiles/shorturl_server.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

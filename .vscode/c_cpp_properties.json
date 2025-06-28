@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/jsoncpp",
+                "${workspaceFolder}/rpc-src/application/src",
+                "${workspaceFolder}/rpc-src/application/redis",
+                "${workspaceFolder}/rpc-src/application/mysql",
+                "/usr/include/mysql",
+                "${workspaceFolder}/rpc-src/application/base",
+                "${workspaceFolder}/src/application/short_src"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
