@@ -35,33 +35,33 @@ int main(int argc, char *argv[])
      
     signal(SIGPIPE, SIG_IGN); //忽略SIGPIPE信号
     int ret = 0;
-    char *str_tc_http_server_conf = NULL;
+    char *str_shorturl_server_conf = NULL;
     if(argc > 1) {
-        str_tc_http_server_conf = argv[1];  // 指向配置文件路径
+        str_shorturl_server_conf = argv[1];  // 指向配置文件路径
     } else {
-        str_tc_http_server_conf = (char *)"tc_http_server.conf";
+        str_shorturl_server_conf = (char *)"shorturl_server.conf";
     }
-     std::cout << "conf file path: " <<  str_tc_http_server_conf << std::endl;
+     std::cout << "conf file path: " <<  str_shorturl_server_conf << std::endl;
 
-    CConfigFileReader config_file(str_tc_http_server_conf);     //读取配置文件
+    CConfigFileReader config_file(str_shorturl_server_conf);     //读取配置文件
 
     //日志设置级别
     char *str_log_level =  config_file.GetConfigName("log_level");  
     Logger::LogLevel log_level = static_cast<Logger::LogLevel>(atoi(str_log_level));
     Logger::setLogLevel(log_level);
 
-    // 初始化mysql、redis连接池，内部也会读取读取配置文件
-    CacheManager::SetConfPath(str_tc_http_server_conf); //设置配置文件路径
-    CacheManager *cache_manager = CacheManager::getInstance();
-    if (!cache_manager) {
-        LOG_ERROR <<"CacheManager init failed";
-        return -1;
-    }
-
-    CDBManager::SetConfPath(str_tc_http_server_conf);   //设置配置文件路径
+    CDBManager::SetConfPath(str_shorturl_server_conf);   //设置配置文件路径
     CDBManager *db_manager = CDBManager::getInstance();
     if (!db_manager) {
         LOG_ERROR <<"DBManager init failed";
+        return -1;
+    }
+
+    // 初始化mysql、redis连接池，内部也会读取读取配置文件
+    CacheManager::SetConfPath(str_shorturl_server_conf); //设置配置文件路径
+    CacheManager *cache_manager = CacheManager::getInstance();
+    if (!cache_manager) {
+        LOG_ERROR <<"CacheManager init failed";
         return -1;
     }
 
