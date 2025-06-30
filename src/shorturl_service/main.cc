@@ -58,6 +58,13 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    CDBManager::SetConfPath(str_tc_http_server_conf);   //设置配置文件路径
+    CDBManager *db_manager = CDBManager::getInstance();
+    if (!db_manager) {
+        LOG_ERROR <<"DBManager init failed";
+        return -1;
+    }
+
     // 设置 KV 存储的最大容量
     KVStore::getInstance().setMaxCapacity(200);
     // 启动定时清理过期 key 的任务
