@@ -50,6 +50,13 @@ int main(int argc, char *argv[])
     Logger::LogLevel log_level = static_cast<Logger::LogLevel>(atoi(str_log_level));
     Logger::setLogLevel(log_level);
 
+    CDBManager::SetConfPath(str_tc_http_server_conf);   //设置配置文件路径
+    CDBManager *db_manager = CDBManager::getInstance();
+    if (!db_manager) {
+        LOG_ERROR <<"DBManager init failed";
+        return -1;
+    }
+
     // 初始化mysql、redis连接池，内部也会读取读取配置文件
     CacheManager::SetConfPath(str_tc_http_server_conf); //设置配置文件路径
     CacheManager *cache_manager = CacheManager::getInstance();
