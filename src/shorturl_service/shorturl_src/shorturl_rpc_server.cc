@@ -9,6 +9,10 @@
 #include <thread>
 #include "shorturl_rpc.h"
 #include "shorturl_rpc.pb.h"
+#include "RateLimiter.h"
+
+// 初始化限流器，容量为 100，每秒生成 10 个令牌
+RateLimiter limiter(100, 10);
 
 
 // 启动 RPC 服务
