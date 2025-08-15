@@ -24,15 +24,33 @@
 std::string generateErrorResponse();
 
 // 生成短链标识
+// std::string generateShortKey() {
+//     static const std::string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+//     std::random_device rd;
+//     std::mt19937 gen(rd());
+//     std::uniform_int_distribution<> dis(0, chars.size() - 1);
+//     std::string shortKey;
+//     for (int i = 0; i < 6; ++i) {
+//         shortKey += chars[dis(gen)];
+//     }
+//     return shortKey;
+// }
+
 std::string generateShortKey() {
-    static const std::string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    // 生成UUID
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, chars.size() - 1);
-    std::string shortKey;
-    for (int i = 0; i < 6; ++i) {
-        shortKey += chars[dis(gen)];
-    }
+    std::uniform_int_distribution<> dis(0, 15);
+    
+    char uuid[37];
+    snprintf(uuid, sizeof(uuid),
+        "%04x%04x-%04x-%04x-%04x-%04x%04x%04x",
+        dis(gen), dis(gen), dis(gen),
+        dis(gen), dis(gen), dis(gen),
+        dis(gen), dis(gen));
+    
+    // 取UUID前6个字符作为短链
+    std::string shortKey(uuid, 6);
     return shortKey;
 }
 
